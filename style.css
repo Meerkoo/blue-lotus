@@ -1,0 +1,857 @@
+:root {
+	--blue: #265999;
+	--gold: #dbbb6b;
+	--black: #24262b;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+	font-family: "Lato", Sans-serif;
+}
+
+body {
+	background-color: #EAEAEA;
+}
+
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 60px;
+	height: 8vh;
+	background-color: var(--blue);
+	z-index: 10;
+	border-bottom: solid var(--gold) 1px;
+}
+
+.logo {
+	display: flex;
+	animation: fadeInDown 0.5s
+}
+
+.logo a {
+	text-decoration: none;
+	font-size: 32px;
+	color: var(--gold);
+	padding-right: 10px;
+	padding-left: 5vw;
+}
+
+.logo-foto {
+	border-radius: 8px;
+    border: 1px solid #dcbc6c;
+	padding: 5px;
+	margin-right: auto;
+}
+
+@keyframes logoFade {
+	from{
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+
+.nav-links{
+	display: flex;
+	justify-content: space-around;
+	width: 45%;
+}
+
+.nav-links li{
+	list-style: none;
+}
+
+.nav-links a{
+	color: rgb(226,226,226);
+	text-decoration: inherit;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 14px;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+}
+
+
+nav ul li a:hover{
+	color: var(--gold);
+	font-size: 16px;
+
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+	padding-right: 5vw;
+}
+
+.burger div{
+	width: 25px;
+	height: 3px;
+	background-color: var(--gold);
+	margin: 5px;
+	transition: all 0.3s ease;
+	
+}
+
+@media screen and (max-width:1024px) {
+	.nav-links {
+		width: 55%;
+	}
+}
+
+@media screen and (max-width:877px) {
+	.logo-foto {
+		display: none;
+	}
+}
+
+@media screen and (max-width:768px) {
+	body{
+		overflow-x: hidden;
+	}
+	.nav-links {
+		position: absolute;
+		right: 0px;
+		height: 100vh;
+		top: 8vh;
+		background-color: var(--blue);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+		transform: translateX(100%);
+		transition: transform 0.5s ease-in;
+		border-left: solid var(--gold) 1px;
+	}
+	.nav-links li {
+		opacity: 0;
+	}
+	.burger {
+		display: block;
+	}
+
+	.logo-foto {
+		display: block;
+	}
+}
+
+
+
+@media screen and (max-width:430px) {
+	.logo-foto {
+		display: none;
+	}
+
+	.logo a {
+		padding-left: 0;
+	}
+
+	.burger {
+		padding-right: 0px;
+	}
+}
+
+
+.nav-active{
+	transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+	from{
+		opacity: 0;
+		transform: translateX(80px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.toggle .line1{
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+	opacity: 0;
+}
+.toggle .line3{
+	transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.foto img{
+	overflow-x: hidden;
+	max-width: 100%;
+	margin-top: 8vh;
+	animation: slideInDown 0.4s;
+}
+
+.foto{
+	background-color: #EAEAEA;;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+	padding-top: 60px;
+  }
+
+
+.template {
+	font-family: sans-serif;
+	background-color: #EAEAEA;
+	position: relative;
+	padding-top: 2%;
+	padding-bottom: 2%;
+
+}
+
+/* banner */
+.template .banner {
+	width: 100%;
+	padding: 60px 0;
+	text-align: center;
+	background: #000000;
+	color: #FFFFFF;
+}
+
+/* template */
+.template .h1 {
+	font-size: 2.8em;
+	padding: 10px 0;
+	font-weight: 800;
+}
+
+.template .fill-out-form {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+
+/* white-container */
+.template .white-container {
+	max-width: 700px;
+	width: 100%;
+	background-color: #FFFFFF;
+	padding: 25px 30px;
+	
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.template .white-container .title {
+	font-size: 25px;
+	font-weight: 500;
+	position: relative;
+	text-align: center;
+}
+
+.template .white-container .title::before {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	background-color: var(--gold);
+	height: 2px;
+	box-sizing: border-box;
+	width: 30%;
+	left: 35%;
+	
+	animation: slideInLeft 0.3s;
+}
+
+.template form .fill-out-details {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 20px 0 12px 0;
+}
+
+form .template .fill-out-details .fill-out-box {
+	margin-bottom: 15px;
+	width: calc(100% / 2 - 20px);
+	position: absolute;
+}
+
+form .template .fill-out-box span.title-box {
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+
+.template .fill-out-details .fill-out-box input {
+	height: 45px;
+	width: 100%;
+	outline: none;
+	font-size: 16px;
+	border-radius: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: 1px solid #ccc;
+	border-bottom-width: 2px;
+	transition: all 0.3s ease;
+}
+
+.template .no-cursor {
+	caret-color: transparent;
+}
+
+.template .fill-out-details .fill-out-box input:focus {
+	border-color: #5A5A5A;
+}
+
+.template .input-color input {
+	color: #6f6e6e;
+}
+
+.template .fill-out-button {
+	height: 45px;
+	margin: 10px 0;
+}
+
+.template .fill-out-button span {
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	display: none;
+}
+
+.template a.check {
+	margin: 10px;
+	font-size: 16px;
+	float: right;
+	text-decoration: underline;
+
+}
+
+.template .fill-out-button input {
+	height: 100%;
+	width: 100%;
+	
+	border: none;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background: var(--blue);
+}
+
+
+.template .fill-out-button input:hover {
+	background: var(--gold);
+}
+
+
+@media(max-width: 600px) {
+	.template a.check {
+		float: none;
+	}
+}
+
+
+
+/* contact */
+.template#contact {
+	display: flex;
+	justify-content: center;
+	background: #EAEAEA;
+	margin-top: 8vh;
+	flex-wrap: wrap;
+
+}
+
+
+.template#contact .white-container#message {
+	width: 400px;
+	height: 630px;
+}
+
+.template#contact .white-container#info {
+	width: 600px;
+	min-height: 630px;
+}
+
+.template#contact .fill-out-box#info span.title-box {
+	font-weight: 500;
+	margin-bottom: 5px;
+	padding-top: 1px;
+	display: inline-block;
+}
+
+
+.template#contact .fill-out-box#map {
+	margin-top: 30px;
+}
+
+@media(max-width: 1250px) {
+
+	.template#contact .white-container#info {
+		width: 400px;
+	}
+
+
+}
+
+@media(max-width: 856px) {
+	.template#contact :nth-child(1) { order: 2; }
+	.template#contact :nth-child(2) { order: 1; }
+	.template#contact :nth-child(3) { order: 3; }
+	
+	.template#contact {
+		display: block;
+	}
+
+	.template#contact .fill-out-form {
+		height: auto;
+	}
+}
+
+.template#contact .white-container#info a{
+	text-decoration: none;
+	color: black;
+	transition: all 0.3s ease;
+}
+.template#contact .white-container#info a:hover{
+	color: var(--gold);
+	padding-left: 8px;
+}
+
+.template .fill-out-details .fill-out-box textarea {
+	height: 45px;
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 100px;
+	max-height: 100px;
+	outline: none;
+	font-size: 16px;
+	border-radius: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 15px;
+	border: 1px solid #ccc;
+	border-bottom-width: 2px;
+}
+
+.template .fill-out-details .fill-out-box textarea:focus {
+	border-color: #5A5A5A;
+}
+
+.template#new .fill-out-form {
+	height: auto;
+}
+
+/* Times */
+
+.template .white-container#times {
+	width: 155px;
+}
+
+.template span.title-box#times {
+	font-weight: 500;
+	margin-bottom: 5px;
+	padding-top: 10px;
+	display: inline-block;
+} 
+
+
+.template .white-container#times .title::before {
+	bottom: -3px;
+}
+
+@media(max-width: 856px) {
+	.template .fill-out-form#contact_times .white-container#times {
+		width: 400px;
+	}
+
+}
+
+
+/* Index.php */
+
+.template#lotus {
+	padding-top: 0px;
+}
+
+.template#lotus .fill-out-form{
+	text-align: center;
+}
+
+.template#specialiteiten .fill-out-form {
+	text-align: center;
+}
+
+.template#menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.white-container#menu .title {
+	font-size: 32px;
+}
+
+.template#menu .fill-out-form{
+	width: 100%;
+	padding: 10px;
+	padding-bottom: 5vh;
+}
+
+.template#menu .fill-out-form#keuze{
+	width: 100%;
+	max-width: 720px;
+	gap: 20px;
+}
+
+
+.template#menu .white-container#keuze-chinees {
+	width: 100%;
+}
+
+.template#menu .white-container#keuze-sushi {
+	width: 100%;
+}
+
+
+@media(max-width: 515px) {
+	.template#menu .fill-out-form#keuze .title{
+		font-size: 22px;
+	}
+}
+
+@media(max-width: 472px) {
+	.template#menu .fill-out-form#keuze .title{
+		font-size: 20px;
+	}
+}
+
+@media(max-width: 442px) {
+	.template#menu .fill-out-form#keuze .title{
+		font-size: 19px;
+	}
+}
+
+@media(max-width: 428px) {
+	.template#menu .fill-out-form#keuze .title{
+		font-size: 25px;
+	}
+}
+
+
+.template#menu img{
+	margin-top: 0;
+	width: 100%;
+	max-width: 300px;
+}
+
+.template .white-container#keuze-chinees .title::before {
+	opacity: 0;
+}
+
+.template .white-container#keuze-sushi .title::before {
+	opacity: 0;
+}
+
+hr.line {
+	width:25%;
+	margin: auto;
+	border: 1px solid var(--gold);
+}
+
+.template#action {
+	display: flex;
+	justify-content: center;
+	padding: 0;
+}
+
+.template#action .fill-out-form{
+	width: 100%;
+	max-width: 720px;
+	gap: 20px
+}
+
+.template#action .fill-out-button{
+	width: 100%;
+}
+
+/* Reserveer pagina */
+
+.template#reservation {
+	margin-top: 8vh;
+	display: flex;
+	justify-content: center;
+}
+
+.template#reservation .white-container#reservation {
+	width: 100%;
+	min-width: 40vw;
+}
+
+@media(max-width: 600px) {
+	.template#reservation{
+		flex-direction: column;
+	}
+
+	.template#reservation .white-container#reservation {
+		width: 100%;
+	}
+	
+	.template#reservation .white-container#times {
+		width: 100%;
+	}
+}
+
+/* menukaart */
+
+.menukaart .mobile img{
+	display: none;
+}
+
+.menukaart .normal img {
+	display: block;
+}
+
+@media screen and (max-width:768px) {
+	.menukaart .mobile img{
+		display: block;
+	}
+
+	.menukaart .normal img {
+		display: none;
+	}
+}
+
+
+.menukaart .normal{
+	display: flex;
+	flex-direction: column;
+	padding: 0 15vw;
+	padding-top: 8vh;
+	
+}
+
+.menukaart .normal img {
+	overflow-x: hidden;
+	max-width: 100%;
+}
+
+.menukaart .mobile img{
+	width: 100%;
+}
+
+.menukaart .mobile {
+	margin: 0;
+}
+
+/* footer */
+
+.footer .container{
+	max-width: 1170px;
+	margin:auto;
+}
+.footer .row{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.footer ul{
+	list-style: none;
+}
+.footer{
+	background-color: var(--blue);
+    padding: 70px 0;
+	padding-bottom: 0px;
+	border-top: solid var(--gold) 1px;
+}
+.footer-col{
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: var(--gold);
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li{
+	font-size: 16px;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a{
+	font-size: 16px;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 575px){
+	.footer .row{
+		justify-content: left;
+	}
+}
+
+
+.footer-col#links {
+	width: 100px;
+}
+
+
+.footer span {
+	display: flex;
+	color: #ffffff;
+	font-size: 13px;
+	justify-content: right;
+	padding: 20px;
+}
+
+
+
+.banner-1 {
+	position: relative;
+	overflow: hidden;
+}
+
+.banner-1 .template {
+	position: absolute;
+	bottom: 50%;
+ 	right: 20px;
+	padding-left: 20px;
+	background-color: transparent;
+	overflow: hidden;
+}
+
+@media screen and (max-width:622px) {
+	.banner-1 .template {
+		bottom: 25%;
+	}
+}
+.banner-1 .template .white-container {
+	background-color: rgb(255, 255, 255, 0.7)
+}
+
+
+
+.template#specialiteiten .fill-out-form .white-container {
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.template#specialiteiten .fill-out-form .title-box {
+	line-height: 1.5;
+}
+
+.template#specialiteiten .white-container#info .title {
+	font-size: 32px;
+}
+
+
+
+.template#menu .fill-out-form .white-container#menu {
+	background-color: transparent;
+	box-shadow: none;
+	padding-bottom: 0;
+}
+
+.template#specialiteiten {
+	padding-top: 8vh;
+	padding-bottom: 1vh;
+}
+
+.template .fill-out-button#reserveren input{
+	background: var(--gold);
+	color: black;
+}
+
+
+.template .fill-out-button#reserveren input:hover{
+	background: var(--blue);
+	color: white;
+}
+
+
+
+/* Geschiedenis  */
+.banner-2 {
+	margin: 20px;
+}
+
+.banner-2 img{
+	height: 100%;
+	width: 40vw;
+	min-width: 350px;
+	border: solid var(--gold) 3px;
+	padding: 20px;
+}
+
+.template#geschiedenis .fill-out-form .title-box {
+	line-height: 1.5;
+}
+
+
+.template#geschiedenis .fill-out-form {
+	text-align: left;
+}
+
+.template#geschiedenis .fill-out-form .title {
+	text-align: left;
+}
+
+.template#geschiedenis .fill-out-form .title::before {
+	left: 0;
+}
+
+.template#geschiedenis .fill-out-form .white-container {
+	background-color: transparent;
+	box-shadow: none;
+}
+
+@media screen and (max-width:768px) {
+	.template#geschiedenis .fill-out-form {
+		flex-direction: column;
+	}
+}
+
