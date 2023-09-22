@@ -79,7 +79,7 @@
                         <br>
                         <span class="title-box"><b>BTW: </b>005.017.488B01</span>
                         <br>
-                        <span class="title-box"><b>Bank Rekening: </b> 35.41.32.296</span>
+                        <span class="title-box"><b>Bank Rekening:</b> NL17 RABO 0354132296</span>
                         <br>
                     </div>
                     <div class="fill-out-box" id="map">

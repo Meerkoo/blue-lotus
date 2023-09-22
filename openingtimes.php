@@ -3,13 +3,13 @@
  // Als je een dag op gesloten wil zetten, zet dan $[dag]_closed op True. Verander niet de tijd in gelosten!!!
  // Als je het op geopent wil verander het in False. LET OP Hoofdletter!!!
  
- $monday_start = date("H:i", strtotime("16:30"));
+ $monday_start = date("H:i", strtotime("17:00"));
  $monday_end = date("H:i", strtotime("22:00"));
  $monday_closed = False;
  
  $tuesday_start = date("H:i", strtotime("16:30"));
  $tuesday_end = date("H:i", strtotime("22:00"));
- $tuesday_closed = True;
+ $tuesday_closed = False;
  
  $wednesday_start = date("H:i", strtotime("16:30"));
  $wednesday_end = date("H:i", strtotime("22:00"));
