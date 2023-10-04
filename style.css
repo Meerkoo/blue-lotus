@@ -125,10 +125,15 @@ nav ul li a:hover{
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: flex-start;
 		width: 50%;
 		transform: translateX(100%);
 		transition: transform 0.5s ease-in;
 		border-left: solid var(--gold) 1px;
+		padding-top: 6vh;
+		gap: 12vh;
+		display: flex;
+		width: 45%;
 	}
 	.nav-links li {
 		opacity: 0;
@@ -405,9 +410,6 @@ form .template .fill-out-box span.title-box {
 }
 
 @media(max-width: 856px) {
-	.template#contact :nth-child(1) { order: 2; }
-	.template#contact :nth-child(2) { order: 1; }
-	.template#contact :nth-child(3) { order: 3; }
 	
 	.template#contact {
 		display: block;
@@ -455,8 +457,17 @@ form .template .fill-out-box span.title-box {
 
 /* Times */
 
+.template#reservation .white-container#times {
+	width: 155px;
+	height: 660px;
+}
+
 .template .white-container#times {
 	width: 155px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
 .template span.title-box#times {
@@ -493,10 +504,9 @@ form .template .fill-out-box span.title-box {
 	text-align: center;
 }
 
+
 .template#menu {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	text-align: center;
 }
 
 .white-container#menu .title {
@@ -505,64 +515,16 @@ form .template .fill-out-box span.title-box {
 
 .template#menu .fill-out-form{
 	width: 100%;
-	padding: 10px;
-	padding-bottom: 5vh;
-}
-
-.template#menu .fill-out-form#keuze{
-	width: 100%;
-	max-width: 720px;
-	gap: 20px;
+	display: flex;
+	justify-content: center;
 }
 
 
-.template#menu .white-container#keuze-chinees {
-	width: 100%;
+.template#menu .fill-out-form .white-container#menu {
+	background-color: transparent;
+	box-shadow: none;
 }
 
-.template#menu .white-container#keuze-sushi {
-	width: 100%;
-}
-
-
-@media(max-width: 515px) {
-	.template#menu .fill-out-form#keuze .title{
-		font-size: 22px;
-	}
-}
-
-@media(max-width: 472px) {
-	.template#menu .fill-out-form#keuze .title{
-		font-size: 20px;
-	}
-}
-
-@media(max-width: 442px) {
-	.template#menu .fill-out-form#keuze .title{
-		font-size: 19px;
-	}
-}
-
-@media(max-width: 428px) {
-	.template#menu .fill-out-form#keuze .title{
-		font-size: 25px;
-	}
-}
-
-
-.template#menu img{
-	margin-top: 0;
-	width: 100%;
-	max-width: 300px;
-}
-
-.template .white-container#keuze-chinees .title::before {
-	opacity: 0;
-}
-
-.template .white-container#keuze-sushi .title::before {
-	opacity: 0;
-}
 
 hr.line {
 	width:25%;
@@ -597,6 +559,7 @@ hr.line {
 .template#reservation .white-container#reservation {
 	width: 100%;
 	min-width: 40vw;
+	height: 660px;
 }
 
 @media(max-width: 600px) {
@@ -606,12 +569,18 @@ hr.line {
 
 	.template#reservation .white-container#reservation {
 		width: 100%;
+		height: 680px;
 	}
 	
 	.template#reservation .white-container#times {
 		width: 100%;
+		height: 100%;
 	}
 }
+
+
+
+
 
 /* menukaart */
 
@@ -789,15 +758,7 @@ hr.line {
 }
 
 
-
-.template#menu .fill-out-form .white-container#menu {
-	background-color: transparent;
-	box-shadow: none;
-	padding-bottom: 0;
-}
-
 .template#specialiteiten {
-	padding-top: 8vh;
 	padding-bottom: 1vh;
 }
 
@@ -855,3 +816,6 @@ hr.line {
 	}
 }
 
+input[type='date'], input[type='time'] {
+    -webkit-appearance: none;
+}

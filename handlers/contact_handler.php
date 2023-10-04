@@ -21,17 +21,20 @@
         die();
     }
 
-    $headers = array(
-        'From' => 'no-reply@blue-lotus.nl'
-    );
-    $reveiver = "nevermirco.@gmail.com";
-    $body = "New message from: {$name}\n";
-    $body .= "Subject: {$subject}\n\n";
-    $body .= "{$message}\n\n";
-    $body .= "Email: {$mail}\n";
-    $body .= "Phone: {$phone}";
+    include "../emails/contactmail.php";
+    $headers = [
+        'From' => 'The Blue Lotus <info@blue-lotus.nl>',
+        'X-Sender' => 'The Blue Lotus <info@blue-lotus.nl>',
+        'X-Mailer' => 'PHP/' . phpversion(),
+        'X-Priority' => '1',
+        'Return-Path' => 'info@blue-lotus.nl',
+        'MIME-Version' => '1.0',
+        'Content-Type' => 'text/html;'
+        ];
 
-    if (mail($reveiver, $subject, $body, $headers)) {
+    $reveiver = "info@blue-lotus.nl";
+
+    if (mail($reveiver, "Nieuw Bericht", $contact_mail, $headers)) {
         echo "Bericht is verstuurd!";
     } else {
         echo "Bericht sturen mislukt!";

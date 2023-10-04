@@ -52,10 +52,26 @@
     <div class="template" id="menu">
       <section class="fill-out-form">
           <div class="white-container" id="menu">
-            <div class="title">Ons <b>Menu</b></div>  
-          </div>
+            <div class="title">Ons <b>Menu</b></div>
+            <br>
+            <div class="fill-out-details">
+                <div class="fill-out-box">  
+                  <span class="title-box">
+                  <br>
+                  Bij ons restaurant kunt u genieten van een veelzijdige Aziatische eetervaring met twee unieke menuopties. 
+                  Probeer ons à la carte Chinees-Indische menu, met authentieke gerechten uit China en Indonesië, bereid volgens traditionele recepten. 
+                  Als u op zoek bent naar meer variatie, bieden wij een onbeperkt Sushi & Grill-menu, waar u kunt smullen van verse sushi en een scala aan 
+                  heerlijke gegrilde gerechten.
+                  </span>
+                </div>
+                <br>
+                <div class="fill-out-button">
+                  <input type="button" onclick="location.href='./menu.php';" value="Bekijk menu">
+                </div>
+            </div>
+        </div>
       </section>
-      <section class="fill-out-form" id=keuze>
+      <!-- <section class="fill-out-form" id=keuze>
         <div class="white-container" id="keuze-chinees">
             <span class="title-box"><img src="images/chinees2.png" alt="Foto van chinees eten"></span>
             <div class="title">Chinees-<b>Indisch</b></div>
@@ -71,7 +87,7 @@
             </div>
           </div>  
        </div>
-      </section>
+      </section> -->
     </div>
 
 

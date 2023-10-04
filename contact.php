@@ -94,17 +94,17 @@
             <div class="white-container" id="times">
                 <div class="title">Openings tijden</div>
                 <span class="title-box" id="times"><b>Maandag: <br></b><?php if ($monday_closed) { echo "Gesloten"; } else { echo $monday_start, " - ", $monday_end; } ?></span>
-                <br>
+                
                 <span class="title-box" id="times"><b>Dinsdag: <br></b><?php if ($tuesday_closed) { echo "Gesloten"; } else { echo $tuesday_start, " - ", $tuesday_end; } ?></span>
-                <br>
+                
                 <span class="title-box" id="times"><b>Woensdag: <br></b><?php if ($wednesday_closed) { echo "Gesloten"; } else { echo $wednesday_start, " - ", $wednesday_end; } ?></span>
-                <br>
+                
                 <span class="title-box" id="times"><b>Donderdag: <br></b><?php if ($thursday_closed) { echo "Gesloten"; } else { echo $thursday_start, " - ", $thursday_end; } ?></span>
-                <br>
+               
                 <span class="title-box" id="times"><b>Vrijdag: <br></b><?php if ($friday_closed) { echo "Gesloten"; } else { echo $friday_start, " - ", $friday_end; } ?></span>
-                <br>
+                
                 <span class="title-box" id="times"><b>Zaterdag: <br></b><?php if ($saturday_closed) { echo "Gesloten"; } else { echo $saturday_start, " - ", $saturday_end; } ?></span>
-                <br>
+                
                 <span class="title-box" id="times"><b>Zondag: <br></b><?php if ($sunday_closed) { echo "Gesloten"; } else { echo $sunday_start, " - ", $sunday_end; } ?></span>
                 <br>
             </div>

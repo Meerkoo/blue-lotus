@@ -63,22 +63,28 @@
 
 
     // Mail voor klant
-    include "../emails.php";
+    include "../emails/reservationmails.php";
     $customer = $email;
-    $from = "no-reply@blue-lotus.nl";
     $subject = "Reservering The Blue Lotus";
-    $message = $confirmation_mail;
+    $message = $res_mail;
 
     //end of message 
-    $headers  = "From: $from\r\n"; 
-    $headers .= "Content-type: text/html\r\n";
+    $headers = [
+        'From' => 'The Blue Lotus <info@blue-lotus.nl>',
+        'X-Sender' => 'The Blue Lotus <info@blue-lotus.nl>',
+        'X-Mailer' => 'PHP/' . phpversion(),
+        'X-Priority' => '1',
+        'Return-Path' => 'info@blue-lotus.nl',
+        'MIME-Version' => '1.0',
+        'Content-Type' => 'text/html'
+        ];
 
     // now lets send the email. 
     if (mail($customer, $subject, $message, $headers)) {
         echo "Check uw mailbox voor de bevestiging.";
-        $to = "mirco.gramsma@gmail.com";
+        $to = "info@blue-lotus.nl";
         $subject = "Nieuwe reservering";
-        $message = $acceptmail;
+        $message = $conf_mail;
         mail($to, $subject, $message, $headers);
     } else {
         echo "Reservering mislukt. Probeer opnieuw of neem telefonisch contact op.";

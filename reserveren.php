@@ -41,23 +41,21 @@
                             <span class="title-box">Aantal mensen</span>
                             <br>
                             <div class="no-cursor">
-                                <input type="number" name="guest_count" placeholder="Selecteer een aantal" min="1" required>
+                                <input type="number" name="guest_count" placeholder="Selecteer een aantal" min="1" inputmode="decimal" required>
                             </div>
                         </div>
                         <br>
                         <div class="fill-out-box">
                             <div class="input-color">
                                 <span class="title-box">Datum</span>
-                                <input type="date" name="date" required>
-                                <script> var today = new Date().toISOString().split('T')[0];
-                                document.getElementsByName("date")[0].setAttribute('min', today); </script>
+                                <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" required>
                             </div>
                         </div>
                         <br>
                         <div class="fill-out-box">
                             <div class="input-color">
                                 <span class="title-box">Tijd</span>
-                                <input type="time" name="time" required>
+                                <input type="time" name="time" value="18:00:00" required>
                             </div>
                         </div>
                         <br>
@@ -69,24 +67,29 @@
                 </div>
             </div>
         </section>
-        <section class="fill-out-form">
+        <section class="fill-out-form" id="times">
             <div class="white-container" id="times">
                 <div class="title">Openings-tijden</div>
                 <span class="title-box" id="times"><b>Maandag: <br></b><?php if ($monday_closed) { echo "Gesloten"; } else { echo $monday_start, " - ", $monday_end; } ?></span>
-                <br>
+                
                 <span class="title-box" id="times"><b>Dinsdag: <br></b><?php if ($tuesday_closed) { echo "Gesloten"; } else { echo $tuesday_start, " - ", $tuesday_end; } ?></span>
-                <br>
+                
                 <span class="title-box" id="times"><b>Woensdag: <br></b><?php if ($wednesday_closed) { echo "Gesloten"; } else { echo $wednesday_start, " - ", $wednesday_end; } ?></span>
-                <br>
+               
                 <span class="title-box" id="times"><b>Donderdag: <br></b><?php if ($thursday_closed) { echo "Gesloten"; } else { echo $thursday_start, " - ", $thursday_end; } ?></span>
-                <br>
+               
                 <span class="title-box" id="times"><b>Vrijdag: <br></b><?php if ($friday_closed) { echo "Gesloten"; } else { echo $friday_start, " - ", $friday_end; } ?></span>
-                <br>
+                
                 <span class="title-box" id="times"><b>Zaterdag: <br></b><?php if ($saturday_closed) { echo "Gesloten"; } else { echo $saturday_start, " - ", $saturday_end; } ?></span>
-                <br>
+                
                 <span class="title-box" id="times"><b>Zondag: <br></b><?php if ($sunday_closed) { echo "Gesloten"; } else { echo $sunday_start, " - ", $sunday_end; } ?></span>
+             
                 <br>
+                <div class="title">Let op!</div>
+                <br>
+                <span class="title-box" id="times"><b>Dinsdag</b> en <b>woensdag</b> geen Sushi & Grill wel à la carte</span>
             </div>
+            
         </section>
         <script src="js/reservation.js"></script>
     </div>
